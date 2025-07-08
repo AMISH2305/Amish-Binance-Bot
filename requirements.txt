@@ -1,0 +1,4 @@
+streamlit
+python-binance
+pandas
+requests
