@@ -21,7 +21,7 @@ A simplified trading bot built using the Binance Futures Testnet API. This bot c
 - Install dependencies:
 
 ```bash
-pip install python-binance python-dotenv
+pip install python-binance python-dotenv streamlit
 
 ```
 
