@@ -35,9 +35,12 @@ https://testnet.binancefuture.com
 Log in and generate an API Key and Secret
 
 In your project folder, create a file named .env and add:
+
+```bash
 API_KEY=your_testnet_api_key
 API_SECRET=your_testnet_api_secret
 
+```
 Never upload your .env file publicly — it's used locally to keep your keys secure.
 
 
