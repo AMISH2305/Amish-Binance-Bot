@@ -26,7 +26,7 @@ pip install python-binance python-dotenv
 ```
 
 
-API SETUP:
+## API SETUP:
 To run the bot, you'll need Binance Testnet API credentials.
 
 Go to the Binance Futures Testnet:
@@ -45,23 +45,27 @@ Never upload your .env file publicly — it's used locally to keep your keys sec
 
 
 
-How to Run the Bot (CLI)
+
+## How to Run the Bot (CLI)
 
 Market Order
+```bash
 src/market_orders.py BTCUSDT BUY 0.01
-
+```
 Limit Order
+```bash
 src/limit_orders.py BTCUSDT SELL 0.01 58500
-
-🔵 TWAP Strategy
+```
+TWAP Strategy
+```bash
 src/advanced/twap.py
+```
 
 
-
-How to Run the Streamlit UI
-
+## How to Run the Streamlit UI
+```bash
 streamlit run streamlit_app.py
-
+```
 This will open an interactive web UI where you can select:
 
 Order type (Market, Limit, TWAP)
