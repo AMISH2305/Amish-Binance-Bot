@@ -23,7 +23,7 @@ A simplified trading bot built using the Binance Futures Testnet API. This bot c
 ```bash
 pip install python-binance python-dotenv
 
-
+```
 
 
 API SETUP:
