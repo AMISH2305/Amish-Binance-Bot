@@ -1,5 +1,0 @@
-streamlit
-python-binance
-pandas
-requests
-dotenv
