@@ -218,12 +218,11 @@ with col3:
     asks = [58050 + i*10 for i in range(5)]
     quantities = [0.5, 0.3, 0.8, 0.2, 0.6]
     
-    min_len = min(len(bids), len(asks), len(quantities))
     order_book_data = {
-        'Bid Price': bids[:min_len],
-        'Bid Qty': quantities[:min_len],
-        'Ask Price': asks[:min_len],
-        'Ask Qty': quantities[:min_len]
+        'Bid Price': bids,
+        'Bid Qty': quantities,
+        'Ask Price': asks,
+        'Ask Qty': quantities
     }
     
     df_orderbook = pd.DataFrame(order_book_data)
@@ -264,6 +263,34 @@ with analytics_col:
     
     df_performance = pd.DataFrame(performance_data)
     st.table(df_performance)
+    
+    # P&L Chart
+    st.markdown("#### 💹 P&L Chart")
+    pnl_values = [100, 150, 120, 200, 180, 250, 300]
+    
+    # Create simple date labels
+    pnl_dates = [datetime.now() - timedelta(days=i) for i in range(len(pnl_values)-1, -1, -1)]
+    
+    # Use Plotly Graph Objects instead of Express
+    fig_pnl = go.Figure()
+    fig_pnl.add_trace(go.Scatter(
+        x=pnl_dates, 
+        y=pnl_values, 
+        mode='lines+markers',
+        name='P&L',
+        line=dict(color='#00cc44', width=3),
+        marker=dict(size=6)
+    ))
+    
+    fig_pnl.update_layout(
+        title="7-Day P&L Performance",
+        xaxis_title="Date",
+        yaxis_title="P&L (USD)",
+        height=300,
+        showlegend=False
+    )
+    
+    st.plotly_chart(fig_pnl, use_container_width=True)
 
 # Footer
 st.markdown("---")
