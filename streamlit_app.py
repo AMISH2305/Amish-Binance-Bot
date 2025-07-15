@@ -266,8 +266,8 @@ with analytics_col:
     
     # P&L Chart
     st.markdown("#### 💹 P&L Chart")
-    pnl_dates = pd.date_range(start=datetime.now() - timedelta(days=6), end=datetime.now(), freq='D')
     pnl_values = [100, 150, 120, 200, 180, 250, 300]
+    pnl_dates = pd.date_range(start=datetime.now() - timedelta(days=len(pnl_values)-1), end=datetime.now(), periods=len(pnl_values))
     
     # Create DataFrame for plotly express
     pnl_df = pd.DataFrame({
