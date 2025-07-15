@@ -1,6 +1,6 @@
-from src.market_orders import place_market_order
-from src.limit_orders import place_limit_order
-from src.client_setup import get_binance_client
+from market_orders import place_market_order
+from limit_orders import place_limit_order
+from client_setup import get_binance_client
 import logging
 
 # Configure logging to append to bot.log
