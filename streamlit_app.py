@@ -269,7 +269,13 @@ with analytics_col:
     pnl_dates = pd.date_range(start=datetime.now() - timedelta(days=7), end=datetime.now(), freq='D')
     pnl_values = [100, 150, 120, 200, 180, 250, 300]
     
-    fig_pnl = px.line(x=pnl_dates, y=pnl_values, title="7-Day P&L")
+    # Create DataFrame for plotly express
+    pnl_df = pd.DataFrame({
+        'Date': pnl_dates,
+        'P&L': pnl_values
+    })
+    
+    fig_pnl = px.line(pnl_df, x='Date', y='P&L', title="7-Day P&L")
     fig_pnl.update_traces(line_color='#00cc44')
     st.plotly_chart(fig_pnl, use_container_width=True)
 
