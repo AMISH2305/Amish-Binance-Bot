@@ -1,7 +1,7 @@
 import streamlit as st
-from src.market_orders import place_market_order
-from src.limit_orders import place_limit_order
-from src.advanced.twap import place_twap_orders
+from market_orders import place_market_order
+from limit_orders import place_limit_order
+from advanced.twap import place_twap_orders
 
 st.set_page_config(page_title="Binance Futures Bot", layout="centered")
 st.title("📈 Binance Futures Testnet Bot")
