@@ -1,5 +1,5 @@
 from binance.enums import *
-from src.client_setup import get_binance_client
+from client_setup import get_binance_client
 import logging
 
 # Set up logging
