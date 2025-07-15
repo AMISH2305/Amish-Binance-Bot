@@ -218,11 +218,12 @@ with col3:
     asks = [58050 + i*10 for i in range(5)]
     quantities = [0.5, 0.3, 0.8, 0.2, 0.6]
     
+    min_len = min(len(bids), len(asks), len(quantities))
     order_book_data = {
-        'Bid Price': bids,
-        'Bid Qty': quantities,
-        'Ask Price': asks,
-        'Ask Qty': quantities
+        'Bid Price': bids[:min_len],
+        'Bid Qty': quantities[:min_len],
+        'Ask Price': asks[:min_len],
+        'Ask Qty': quantities[:min_len]
     }
     
     df_orderbook = pd.DataFrame(order_book_data)
