@@ -1,5 +1,5 @@
 from binance.enums import SIDE_BUY, SIDE_SELL, TIME_IN_FORCE_GTC
-from client_setup import get_binance_client
+from src.client_setup import get_binance_client
 import logging
 
 logging.basicConfig(filename='bot.log', level=logging.INFO, format='%(asctime)s - %(message)s')
